@@ -1,0 +1,315 @@
+/* Importação da fonte */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Courier Prime", monospace;
+    color: #000000; /* Cor do texto padrão fora da imagem */
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: #f5f5f5;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid #cccccc; /* Linha embaixo do cabeçalho */
+}
+
+header a {
+    text-decoration: none;
+    position: relative;
+    padding: 10px;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Estilos das bordas dinâmicas para os links */
+header a::before, header a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #000000; /* Cor da borda dinâmica preta */
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+header a:hover::before {
+    width: 100%;
+    background-color: #000000; /* Cor da borda dinâmica preta */
+}
+
+/* Cores específicas para cada link */
+#gojo-link {
+    color: #0000ff; /* Azul para Gojo */
+    background: linear-gradient(45deg, #00f, #0099ff, #00f);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShiftBlue 2s linear infinite; /* Animação do gradiente azul em 2s */
+}
+
+#sukuna-link {
+    color: #ff0000; /* Vermelho para Sukuna */
+    background: linear-gradient(45deg, #f00, #ff6666, #f00);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShiftRed 2s linear infinite; /* Animação do gradiente vermelho em 2s */
+}
+
+#yuta-link {
+    color: #800080; /* Roxo para Yuta */
+    background: linear-gradient(45deg, #800080, #dda0dd, #800080);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShiftPurple 2s linear infinite; /* Animação do gradiente roxo em 2s */
+}
+
+#maki-link {
+    color: #008000; /* Verde para Maki */
+    background: linear-gradient(45deg, #008000, #00ff00, #008000);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShiftGreen 2s linear infinite; /* Animação do gradiente verde em 2s */
+}
+
+/* Animações */
+@keyframes gradientShiftBlue {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes gradientShiftRed {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes gradientShiftPurple {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes gradientShiftGreen {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Conteúdo principal */
+.container {
+    display: flex;
+    min-height: 100vh; /* Garante que o conteúdo se ajuste à altura mínima da tela */
+    background-color: #ffffff;
+    position: relative;
+}
+
+/* Container da imagem */
+.imagem-container {
+    position: relative; /* Para o overlay */
+    width: 50%; /* Largura de 50% da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo da imagem */
+.imagem {
+    width: 100%; /* Ajustado para ocupar 100% da largura do contêiner */
+    height: 100%; /* Ajustado para ocupar 100% da altura do contêiner */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilo do overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #ffffff; /* Texto branco dentro da imagem */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.imagem-container:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h1 {
+    color: #ffffff; /* Texto branco dentro da imagem */
+}
+
+/* Conteúdo textual */
+.conteudo {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #000000; /* Texto preto fora da imagem */
+}
+
+/* Ícone */
+.icone {
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 100px; /* Largura e altura iguais para garantir que o contêiner seja quadrado */
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Oculta qualquer parte da imagem que saia do contêiner circular */
+    border-radius: 50%; /* Torna o contêiner circular */
+    transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+}
+
+.icone img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para cobrir o contêiner sem distorcer */
+    border-radius: 50%; /* Torna a própria imagem circular */
+}
+
+.icone:hover {
+    transform: scale(2.2); /* Aumenta a imagem no hover */
+}
+
+/* Títulos */
+h1 {
+    margin: 0 0 10px;
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00f, #0099ff, #00f); /* Gradiente azul */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Texto transparente para o gradiente aparecer */
+    animation: gradientShiftBlue 2s linear infinite; /* Animação do gradiente azul em 2s */
+}
+
+.titulo-sukuna {
+    background: linear-gradient(45deg, #f00, #ff6666, #f00); /* Gradiente vermelho */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Texto transparente para o gradiente aparecer */
+    animation: gradientShiftRed 2s linear infinite; /* Animação do gradiente vermelho em 2s */
+}
+
+.titulo-yuta {
+    background: linear-gradient(45deg, #800080, #dda0dd, #800080); /* Gradiente roxo */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Texto transparente para o gradiente aparecer */
+    animation: gradientShiftPurple 2s linear infinite; /* Animação do gradiente roxo em 2s */
+}
+
+.titulo-maki {
+    background: linear-gradient(45deg, #008000, #00ff00, #008000); /* Gradiente verde */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Texto transparente para o gradiente aparecer */
+    animation: gradientShiftGreen 2s linear infinite; /* Animação do gradiente verde em 2s */
+}
+
+/* Animações */
+@keyframes gradientShiftBlue {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes gradientShiftRed {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes gradientShiftPurple {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes gradientShiftGreen {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Rodapé */
+footer {
+    border-top: 1px solid #cccccc; /* Linha separadora */
+    padding: 20px;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #000000;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
